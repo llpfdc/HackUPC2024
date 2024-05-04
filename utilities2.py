@@ -69,7 +69,11 @@ def get_labels(link):
     season = 2
   elif link_list[2] == 'V':
     season = 3
-  return [int(link_list[1]), season, int(link_list[3]), int(link_list[4])]
+  try:
+    return [0, 0, int(link_list[3]), 0]
+  except:
+    return [0, 0, 0, 0]
+  #return [int(link_list[1]), season, int(link_list[3]), int(link_list[4])]
 
 
 def preprocess_image(img):
