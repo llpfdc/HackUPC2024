@@ -34,7 +34,7 @@ def url_to_Image(url):
   except Exception as e:
     return None
 
-def links_to_loader(data_links):
+def links_to_data_and_labels(data_links):
   return_data = []
   labels = []
   prefix = "https://sttc-stage-zaraphr.inditex.com"
@@ -55,7 +55,7 @@ def links_to_loader(data_links):
         tensor = image_to_tensor(image)
         return_data.append(tensor)
   dataloader = DataLoader(return_data, batch_size=32, shuffle=True)
-  return dataloader, labels
+  return return_data, labels
 
 def get_labels(link):
   parts = link.split("/")
