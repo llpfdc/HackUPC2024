@@ -61,7 +61,7 @@ def get_labels(link):
   parts = link.split("/")
   photos_index = parts.index("photos")
   link_fields = parts[photos_index:]
-  link_list = [x for x in link_fields if x is not '']
+  link_list = [x for x in link_fields if x != '']
   season = 0
   if link_list[2] == 'W':
     season = 1
