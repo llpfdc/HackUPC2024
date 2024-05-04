@@ -55,7 +55,7 @@ def links_to_data_and_labels(data_links):
         tensor = image_to_tensor(image)
         return_data.append(tensor)
   dataloader = DataLoader(return_data, batch_size=32, shuffle=True)
-  return return_data, labels[2]
+  return return_data, [label[2] for label in labels]
 
 def get_labels(link):
   parts = link.split("/")
